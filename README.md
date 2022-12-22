@@ -11,6 +11,8 @@ This project is split into the following subpages:
 - `resume`: My resume
 - `contact`: How to contact me
 
+Also there are 5 CSS files, one for each page and one for general styling. 
+
 ## Folder Structure
 
 The workspace contains one folders by default:
