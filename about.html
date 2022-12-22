@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- General styling for the project-->
+        <link href="styles.css" rel="stylesheet">
+        <!-- Specific styling for this page -->
+        <link href="stylesAbout.css" rel="stylesheet">
+        <!-- Gentinum Plus Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Gentium+Plus:italic" rel="stylesheet" >
+        <title>About Me</title>
+    </head>
+    <body>
+
+        <!-- Burger Menu that slides in from the left,
+            if the Burger Icon is toggled-->
+        <nav id="burger-menu" class="burger-menu normal-text">
+            <input id="burger-menu-input" type="checkbox">
+            <label for="burger-menu-input" class="burger-menu-toggler">
+                <img id="burger-icon" src="images/greenBurgerIcon.png" width="35" alt="icon to toggle the dropdown menu" />
+            </label>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <!--The light/dark mode toggle icon-->
+        <!-- use aria ? -->
+        <button id="toggle-mode-button" class="mode-button" type="button" onclick="toggleDarkMode()"></button>
+        <label for="toggle-mode-button" class="toggle-button-label">
+            <img id="color-mode-icon" src="images/greenToggleIcon.png" width="35" alt="icon to toggle dark/light mode">
+        </label>
+
+
+        <header id="about-banner" class="push-down">
+            <div id="about-banner-overlay">
+                <img id="about-banner-img" src="images/banner.png" alt="A picture of my laptop with roses next to it." width="100vw">
+            </div>
+            <!--<div id="about-title-container">-->
+                <h1 class="about-banner-text big-text">About Me</h1>
+            <!--</div>-->
+        </header>
+
+
+        <main class="centered-text">
+            <div id="intro" class="margin">
+                <p>
+                    Hi! My name is Michelle.<br>
+                    I live in Germany and am an aspiring programmer.<br>
+                    In my free time i like to play video-games, hang out with friends and i am very new at snowboarding.
+                    It can be quite painful as i have learned, but i still enjoy it a lot!<br>
+                    Currently i attend Harvards CS50 course, this homepage is actually week 8's assignment, how did i do? :).<br>
+                    I tried my hand on a few other projects as well:
+                </p>
+            </div>
+
+            <h2>Projects</h2>
+            <div id="projects" class="margin">
+
+
+                <div class="img-matrix">
+                    <h3>Matrix</h3>
+                    <img id="matrix" src="images/matrix.png" height="200"
+                        alt="A green and black Webpage with the typical Matrix code rain in the background.">
+                </div>
+
+                <p class="txt-matrix left-aligned-text">
+                    I am especially proud of this one. This Webpage was part of the responsive web design certificate from <a href="www.freecodecamp.org" target="_blank">freecodecamp.org</a>.<br>
+                    As part of the assignment, you should try to use only pure CSS and html. The coderain especially was a big challenge and as a result, what could have been a few lines of
+                    code turned into roughly a hundred lines of html and an additional hundreds of lines of CSS, since the numbers had to be styled individually. As you can imagine, the sourcecode
+                    now has a huge block of unnecessary code at the end that could have been avoided. But i am still proud of the result, it came out exactly as i imagined.
+                </p>
+
+
+                <div class="img-albert">
+                    <h3>Albert-Schweitzer</h3>
+                    <img id="schweitzer" src="images/schweitzer.png" height="200"
+                        alt="A screenshot of my Albert Schweitzer website with his portrait being the center piece of the page.">
+                </div>
+
+                <p class="txt-albert right-aligned-text">
+                    Another page created for the freecodecamps responsive web design certificate. Albert Schweitzer was actually the namegiver of my high school. If you don't know anything about
+                    this man, i strongly recommend the movie "Albert Schweitzer" or "Albert Schweitzer - Ein Leben für Afrika" - as it is called in germany. It is beautifully filmed biopic and shows
+                    his life, his achievements and his values. He was truly a hero and a great rolemodel.
+                </p>
+
+
+                <div class="txt-filter centered-text">
+                    <h3>Filter</h3>
+                    <p>
+                        For CS50's week 4 Assignment we implemented a few filters on bmp files with a certain width and height in C. Then in Week 6 we learned how you can program the same
+                        program in way fewer lines of code in python. So i got curious. How would it turn out if i implemented it in java?<br>
+                        And so i did.<br>
+                        The program is not as long as the one i coded in C, but it is not as short as the one we coded in python. The Java file you can find on my github as well.<br>
+                        The readme of <a href="https://github.com/MichelleNickel/Java-Filter">that project</a> has a few examples as well, please check it out if you are interested.<br>
+                        If you are curious i did not post my solutions, like the C files, for the courses assignments to my github for obvious reasons.<br>
+                        The only exception is this homepage and the UFcOw-project, since the assignment has very few restrictions, so the solutions may vary a lot.
+                        Therefore it would be quite stupid to copy-paste.
+                    </p>
+                </div>
+
+
+                <div class="img-ufo">
+                    <h3>UFcOw</h3>
+                    <img src="images/ufcow.png" height="200"
+                        alt="A cartoon drawing of a cow being swept away by an alien while the farmer looks shocked.">
+                </div>
+
+                <p class="txt-ufo left-aligned-text">
+                    During CS50's first week we were supposed to create a little program in scratch, be it a game, an interactive story or anything else.<br>
+                    What i came up with is a little game with the name "UFcOw", you can try it out <a href="https://scratch.mit.edu/projects/690086136/" target="_blank">here</a>.<br>
+                    You are an alien that had to bring some Kettle from Earth as an assignment for school. But you are no simple alien, you are an achiever!<br>
+                    You want to impress the class and steal as many cows as you can, but be careful, the farmer might not like that all that much.
+                </p>
+
+            </div>
+
+            <p class="margin">
+                Other than that i am just another girl trying to find her way in life. ¯\_(ツ)_/¯<br>
+            </p>
+
+        </main>
+
+        <footer class="margin normal-text centered-text">
+            <hr>
+            <a href="#burger-menu">&#8593; back to top</a>
+        </footer>
+
+
+        <script>
+
+            //fetchses user preferences from local Storage
+            function getUserPref() {
+                return localStorage.getItem('theme') || 'system';
+            }
+
+            //save user preference in local storage
+            function setUserPref(userPref) {
+                localStorage.setItem('theme', userPref);
+            }
+
+            //set the applied mode
+            function setAppliedMode() {
+                const mode = getUserPref();
+                const body = document.body;
+                const modeToggleIcon = document.getElementById('color-mode-icon');
+                const menu = document.getElementById('burger-icon');
+
+                if (mode === 'light') {
+                    body.classList.remove('dark-mode');
+                    modeToggleIcon.src = 'images/greenToggleIcon.png';
+                    menu.src = 'images/greenBurgerIcon.png';
+                } else {
+                    body.classList.add('dark-mode');
+                    modeToggleIcon.src = 'images/pinkToggleIcon.png';
+                    menu.src = 'images/pinkBurgerIcon.png';
+                }
+            }
+
+            // toggle the light/dark mode
+            function togglePref(userPref) {
+                if (userPref === 'light') {
+                    return 'dark';
+                } else {
+                    return 'light';
+                }
+            }
+
+            //Initialize:
+            //get toggle button
+            const modeToggler = document.getElementById('toggle-mode-button');
+            //get user preference from Storage/System at beginning
+            let userPref = getUserPref();
+            //set the applied default mode
+            setAppliedMode();
+
+            let newUserPref;
+
+            //execute this evertime the toggler is clicked
+            modeToggler.onclick = () => {
+                //toggle the old userPref
+                newUserPref = togglePref(userPref);
+                //set old user preference to new user preference.
+                userPref = newUserPref;
+                //store that user preference value in storage
+                setUserPref(newUserPref);
+                //change the applied mode
+                setAppliedMode();
+            }
+
+        </script>
+    </body>
+</html>

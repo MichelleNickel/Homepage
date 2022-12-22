@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- General styling for the project-->
+        <link href="styles.css" rel="stylesheet">
+        <!-- Specific styling for this page -->
+        <link href="stylesIndex.css" rel="stylesheet">
+        <!-- Gentinum Plus Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Gentium+Plus:italic" rel="stylesheet">
+        <title>Michelle Nickel</title>
+    </head>
+    <body>
+        <!--Navigation bar-->
+        <nav id="menu" class="navbar navbar-expand-sm navbar-light navbar-custom">
+            <ul class="navbar-nav big-nav-text nav-fill w-100">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.html">
+                        Resume
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!--The light/dark mode toggle icon-->
+        <!-- use aria ? -->
+        <button id="toggle-mode-button" class="mode-button" type="button" onclick="toggleDarkMode()"></button>
+        <label for="toggle-mode-button" class="toggle-button-label">
+            <img id="color-mode-icon" src="images/greenToggleIcon.png" width="35" alt="icon to toggle dark/light mode">
+        </label>
+
+
+        <main id="index-container">
+            <img id="signatur" src="images/greenSignatur.png" alt="My name 'Michelle Nickel' in Handwriting">
+            <img id="tower-bridge" src="images/towerBridge.jpg" alt="A picture of me in front of the towerbridge in London, UK">
+        </main>
+
+
+        <script>
+
+            //fetchses user preferences from local Storage
+            function getUserPref() {
+                return localStorage.getItem('theme') || 'system';
+            }
+
+            //save user preference in local storage
+            function setUserPref(userPref) {
+                localStorage.setItem('theme', userPref);
+            }
+
+            //set the applied mode
+            function setAppliedMode() {
+                const mode = getUserPref();
+                const body = document.body;
+                const modeToggleIcon = document.getElementById('color-mode-icon');
+                const signatur = document.getElementById('signatur');
+
+                if (mode === 'light') {
+                    body.classList.remove('dark-mode');
+                    modeToggleIcon.src = 'images/greenToggleIcon.png';
+                    signatur.src = 'images/greenSignatur.png';
+                } else {
+                    body.classList.add('dark-mode');
+                    modeToggleIcon.src = 'images/pinkToggleIcon.png';
+                    signatur.src = 'images/pinkSignatur.png';
+                }
+            }
+
+            // toggle the light/dark mode
+            function togglePref(userPref) {
+                if (userPref === 'light') {
+                    return 'dark';
+                } else {
+                    return 'light';
+                }
+            }
+
+            //Initialize:
+            //get toggle button
+            const modeToggler = document.getElementById('toggle-mode-button');
+            //get user preference from Storage/System at beginning
+            let userPref = getUserPref();
+            //set the applied default mode
+            setAppliedMode();
+
+            let newUserPref;
+
+            //execute this evertime the toggler is clicked
+            modeToggler.onclick = () => {
+                //toggle the old userPref
+                newUserPref = togglePref(userPref);
+                //set old user preference to new user preference.
+                userPref = newUserPref;
+                //store that user preference value in storage
+                setUserPref(newUserPref);
+                //change the applied mode
+                setAppliedMode();
+            }
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,110 @@
+/* STYLING FOR THE INDEX PAGE */
+
+#index-container {
+    position: relative;
+}
+
+#tower-bridge {
+    transition: ease all 1s;
+}
+
+body.dark-mode #tower-bridge {
+    filter: brightness(.9) contrast(1.2);
+}
+
+#signatur {
+    transition: ease all 0.5s;
+}
+
+/*  320px — 480px: Mobile devices
+    481px — 768px: iPads, Tablets
+    769px — 1024px: Small screens, laptops
+    1025px — 1200px: Desktops, large screens
+    1201px and more —  Extra large screens, TV */
+
+/* 20px — 480px: Mobile devices */
+@media screen and (max-width: 590px) {
+    #tower-bridge {
+        position: relative;
+        z-index: 1;
+        height: auto;
+        width: 90vw;
+        margin: auto;
+        left: 5%;
+    }
+
+    #signatur {
+        position: absolute;
+        z-index: 2;
+        /* border: solid red; */
+        width: 25rem;
+        top: 5%;
+        left: 35%;
+        transform: translate(-60%, 0%);
+    }
+}
+
+/* 481px — 768px: iPads, Tablets */
+@media screen and (min-width: 591px) {
+    #tower-bridge {
+        position: relative;
+        z-index: 1;
+        height: 90vh;
+        width: auto;
+        margin: auto;
+        left: 15%;
+    }
+
+    #signatur {
+        position: absolute;
+        z-index: 2;
+        width: 28rem;
+        top: 5%;
+        left: 40%;
+        transform: translate(-80%, 50%);
+        /* border: solid green; */
+    }
+}
+
+/* 769px — 1024px: Small screens, laptops */
+@media screen and (min-width: 769px) {
+    #tower-bridge {
+        position: relative;
+        z-index: 1;
+        height: 90vh;
+        width: auto;
+        margin: auto;
+        left: 35%;
+    }
+
+    #signatur {
+        position: absolute;
+        z-index: 2;
+        /* border: solid blue; */
+        width: 35rem;
+        top: 38%;
+        left: 40%;
+        transform: translate(-65%, -50%);
+    }
+}
+
+/* 1025px — 1200px: Desktops, large screens */
+@media screen and (min-width: 1025px) {
+    #tower-bridge {
+        position: relative;
+        z-index: 1;
+        height: 90vh;
+        width: auto;
+        left: 50%;
+    }
+
+    #signatur {
+        position: absolute;
+        z-index: 2;
+        width: 40rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-130%, -50%);
+        /* border: solid pink; */
+    }
+}

@@ -1,0 +1,15 @@
+/* STYLING FOR THE CONTACT PAGE */
+
+/* Styling the body of the Contact Page and aligning the items with flex. */
+#contact_id{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+/* Remove text-decorations from the links in the text versions */
+#collapse_card p a:link {
+    text-decoration: none;
+}

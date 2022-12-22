@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- General styling for the project-->
+        <link href="styles.css" rel="stylesheet">
+        <!-- Specific styling for this page -->
+        <link href="stylesContact.css" rel="stylesheet">
+        <!-- Gentinum Plus Google Font-->
+        <link href="https://fonts.googleapis.com/css?family=Gentium+Plus:italic" rel="stylesheet" >
+        <title>Contact</title>
+    </head>
+    <body id="contact-container" class="centered-text black">
+
+        <!-- Burger Menu that slides in from the left,
+            if the Burger Icon is toggled-->
+        <nav id="burger-menu" class="burger-menu normal-text">
+            <input id="burger-menu-input" type="checkbox">
+            <label for="burger-menu-input" class="burger-menu-toggler">
+                <img id="burger-icon" src="images/greenBurgerIcon.png" width="35" alt="icon to toggle the dropdown menu">
+            </label>
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <!--The light/dark mode toggle icon-->
+        <button id="toggle-mode-button" class="mode-button" type="button" onclick="toggleDarkMode()"></button>
+        <label for="toggle-mode-button" class="toggle-button-label">
+            <img id="color-mode-icon" src="images/greenToggleIcon.png" width="35" alt="icon to toggle dark/light mode">
+        </label>
+
+
+        <main id="contact_id">
+            <h1>Contact and Socials</h1>
+
+            <p>
+                Want to know more about me?<br>
+                Hey thank you!<br>
+                Of course you are welcome to check out my other work on GitHub, or my old posts on Instagram.<br>
+                (I don't really post anything anymore, oops :D)<br>
+                Feel free to send me a message if you wanna say hi :).
+            </p>
+
+            <div>
+                <a href="mailto:michelle.nickel96@gmx.de" target="_blank"><img id="mail-logo" src="images/emailLogo.jpg" width="40" alt="Email letter Logo"></a>
+                <a href="https://www.instagram.com/mischini/" target="_blank"><img id="insta-logo" src="images/instaLogo.png" width="40" alt="Instagram Logo"></a>
+                <a href="https://github.com/MichelleNickel" target="_blank"><img id="github-logo" src="images/gitHubLogoDark.png" width="40" alt="Github Invertocat Logo"></a>
+            </div>
+
+            <!-- Collapsable Text-Versions of the links above -->
+            <p>
+                <button class="btn btn-outline-secondary normal-text" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_card"
+                aria-expanded="false" aria-controls="collapse_card">Text-Versions of the Socials:</button>
+            </p>
+
+            <div class="collapse" id="collapse_card">
+                <p>
+                    <u>Email:</u> michelle.nickel96@gmx.de<br>
+                    <u>Instagram:</u> <a href="https://www.instagram.com/mischini/">https://www.instagram.com/mischini/</a><br>
+                    <u>GitHub:</u> <a href="https://github.com/MichelleNickel">https://github.com/MichelleNickel</a>
+                </p>
+            </div>
+        </main>
+
+
+        <script>
+
+            //fetchses user preferences from local Storage
+            function getUserPref() {
+                return localStorage.getItem('theme') || 'system';
+            }
+
+            //save user preference in local storage
+            function setUserPref(userPref) {
+                localStorage.setItem('theme', userPref);
+            }
+
+            //set the applied mode
+            function setAppliedMode() {
+                const mode = getUserPref();
+                const body = document.body;
+                const modeToggleIcon = document.getElementById('color-mode-icon');
+                const menu = document.getElementById('burger-icon');
+                const mailLogo = document.getElementById('mail-logo');
+                const githubLogo = document.getElementById('github-logo');
+
+                if (mode === 'light') {
+                    body.classList.remove('dark-mode');
+                    modeToggleIcon.src = 'images/greenToggleIcon.png';
+                    menu.src = 'images/greenBurgerIcon.png';
+                    mailLogo.src = 'images/mailLogoLight.png';
+                    githubLogo.src = 'images/gitHubLogoLight.png';
+                } else {
+                    body.classList.add('dark-mode');
+                    modeToggleIcon.src = 'images/pinkToggleIcon.png';
+                    menu.src = 'images/pinkBurgerIcon.png';
+                    mailLogo.src = 'images/mailLogoDark.png';
+                    githubLogo.src = 'images/gitHubLogoDark.png';
+                }
+            }
+
+            // toggle the light/dark mode
+            function togglePref(userPref) {
+                if (userPref === 'light') {
+                    return 'dark';
+                } else {
+                    return 'light';
+                }
+            }
+
+            //Initialize:
+            //get toggle button
+            const modeToggler = document.getElementById('toggle-mode-button');
+            //get user preference from Storage/System at beginning
+            let userPref = getUserPref();
+            //set the applied default mode
+            setAppliedMode();
+
+            let newUserPref;
+
+            //execute this evertime the toggler is clicked
+            modeToggler.onclick = () => {
+                //toggle the old userPref
+                newUserPref = togglePref(userPref);
+                //set old user preference to new user preference.
+                userPref = newUserPref;
+                //store that user preference value in storage
+                setUserPref(newUserPref);
+                //change the applied mode
+                setAppliedMode();
+            }
+        </script>
+    </body>
+</html>

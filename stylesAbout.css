@@ -1,0 +1,116 @@
+/* STYLING FOR THE ABOUT PAGE */
+
+/* Add extra margin atop the intro paragraph on the about page. */
+#intro {
+    margin-top: 2vw;
+}
+
+#about-banner {
+    position: relative;
+    height: auto;
+    width: auto;
+}
+
+/* #about-banner-overlay {
+    background-color: var(--about-banner-overlay);
+    z-index: 3;
+    /* border: solid green; *
+} */
+
+/* Picture-banner on About Page. */
+#about-banner-img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+body.dark-mode #about-banner-img {
+    filter: brightness(.85) contrast(1.2);
+}
+
+.dark-about-banner {
+    filter: brightness(70%);
+}
+
+/* Styling for banner-text. */
+.about-banner-text {
+    background-color: var(--transparent-main-color);
+    text-align: center;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20rem;
+    transform: translate(-50%, -50%);
+}
+
+/* Style the Projects as a CSS grid with areas. */
+#projects {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: auto repeat(4, 1fr) auto;
+    column-gap: 1vw;
+    row-gap: 20px;
+    grid-template-areas:
+        "img-matrix txt-matrix txt-matrix txt-matrix txt-matrix txt-matrix"
+        "txt-albert txt-albert txt-albert txt-albert txt-albert img-albert"
+        "txt-filter txt-filter txt-filter txt-filter txt-filter txt-filter"
+        "img-ufo txt-ufo txt-ufo txt-ufo txt-ufo txt-ufo";
+    margin-top: 10px;
+}
+
+
+/* Position img to the right of the row, with the text to the left of the column.  */
+.img-albert {
+    grid-area: img-albert;
+    align-self: center;
+    justify-self: start;
+    text-align: left;
+}
+body.dark-mode .img-albert {
+    filter: brightness(.85) contrast(1.2);
+}
+/* Position img to the left of the row, with the text to the right of the column. */
+.img-matrix, .img-ufo {
+    align-self: center;
+    justify-self: end;
+    text-align: right;
+}
+
+.img-matrix {
+    grid-area: img-matrix;
+}
+
+.img-ufo {
+    grid-area: img-ufo;
+}
+
+/* Left align text. */
+.txt-matrix, .txt-ufo {
+    grid-area: txt-matrix;
+    align-self: center;
+    text-align: left;
+}
+
+.txt-matrix {
+    grid-area: txt-matrix;
+}
+
+.txt-ufo {
+    grid-area: txt-ufo;
+}
+
+/* Right align text. */
+.txt-albert {
+    grid-area: txt-albert;
+    align-self: center;
+    text-align: right;
+}
+
+/* Center align text. */
+.txt-filter {
+    grid-area: txt-filter;
+    align-self: center;
+}
+
+

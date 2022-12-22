@@ -1,0 +1,259 @@
+/* Define variables for the used colors. */
+:root {
+    /* Light colors*/
+    --peachy-color: #f7eee6;
+    --nude-color: #cbb7a4;
+    --olive-color: #6e8b57;
+    --darker-transparent-green: rgba(110, 139, 87, 0.7);
+    --lighter-transparent-green: rgba(110, 139, 87, 0.6);
+    --grey-color: #444440;
+
+
+    /* Dark colors */
+    --navy-color: #0f1736;
+    --purple-color: #301f40;
+    --transparent-purple-color: rgba(48, 31, 64, 0.7);
+    --transparent-lightpurp-color: rgba(48, 31, 64, 0.6);
+    --dark-rose-color: #93305b;
+    --rose-color: #c43764;
+    --light-rose-color: #f76e99;
+    --transparent-rose-color: rgba(196, 55, 100, 0.6);
+
+
+
+    /* Default Light Mode */
+    --bg-color: var(--peachy-color);
+    --font-color: var(--olive-color);
+    --main-color: var(--olive-color);
+    --transparent-main-color: var(--darker-transparent-green);
+    --secondary-color: var(--peachy-color);
+    --darker-secondary-color: var(--nude-color);
+    --menu-text-color: var(--peachy-color);
+    --menu-overlay-darker: var(--darker-transparent-green);
+    --menu-overlay-lighter: var(--lighter-transparent-green);
+    --accent-color: var(--grey-color);
+    --resume-outer-circle: var(--darker-secondary-color);
+    --resume-banner-color: var(--olive-color);
+}
+
+.dark-mode{
+    /* Dark Mode */
+    --bg-color: var(--navy-color);
+    --font-color: var(--dark-rose-color);
+    --main-color: var(--rose-color);
+    --transparent-main-color: var(--transparent-rose-color);
+    --secondary-color: var(--navy-color);
+    --darker-secondary-color: var(--purple-color);
+    --menu-text-color: var(--dark-rose-color);
+    --menu-overlay-darker: var(--transparent-purple-color);
+    --menu-overlay-lighter: var(--transparent-lightpurp-color);
+    --accent-color: var(--light-rose-color);
+    --resume-outer-circle: var(--accent-color);
+    --resume-banner-color: var(--transparent-rose-color);
+}
+
+
+
+/* GENERAL STYLING */
+
+/* Change root font size to aprox. 10px. */
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    height: 100%;
+    font-family: 'Gentium Plus', monospace;
+}
+
+/* Adjust fontsizes for the according sections.
+    Adjusted to fit the font-style.*/
+h1 { /*was 4.3*/
+    font-size: 5.1rem;
+    color: var(--main-color);
+}
+
+h2 { /*was 3.5*/
+    font-size: 4rem;
+    color: var(--main-color);
+}
+
+h3 { /*was 2.9*/
+    font-size: 3.3rem;
+    color: var(--main-color);
+}
+
+main p, .normal-text { /*was 1.8*/
+    font-size: 2.3rem;
+}
+
+.big-text { /*was 3.3*/
+    font-size: 3.8rem;
+}
+
+/* Change the font size for the nav bar on the homepage. */
+.big-nav-text { /*was 2.8*/
+    font-size: 2.9rem;
+}
+
+/* Change alignment of text to center. */
+.centered-text {
+    text-align: center;
+}
+
+/* Aligns the text left. */
+.left-aligned-text {
+    text-align: left;
+}
+
+/* Aligns the text right. */
+.right-aligned-text {
+    text-align: right;
+}
+
+/* Set margin for the page. */
+.margin {
+    margin: 0vw 2vw 3vw 2vw;
+}
+
+/* Add extra margin on top. */
+.push-down {
+    margin-top: 60px;
+}
+
+/* Light-/Darkmode toggle Icon*/
+.mode-button {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0;
+    z-index: 1;
+}
+#color-mode-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: -1;
+}
+
+/* NAVBAR NAVIGATION */
+
+/* Change the color of the navigation text and links to the olivegreen color. */
+.navbar-custom .navbar-nav .nav-item .navbar-text,
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    color: var(--font-color);
+}
+
+/* Change the color of active or hovered links */
+/* Maybe make like boxes or zoom or sth*/
+.navbar-custom .navbar-nav .nav-item.active .nav-link,
+.navbar-custom .navbar-nav .nav-item:focus .nav-link,
+.navbar-custom .navbar-nav .nav-item:hover .nav-link {
+    color: pink;
+}
+
+/* BURGER MENU NAVIGATION*/
+
+/* Hide checkboxes in the Burger MENU*/
+nav input[type="checkbox"] {
+    display: none;
+}
+
+/* Set background of the menu.  */
+.burger-menu {
+    background-color: var(--menu-overlay-lighter);
+    z-index:3;
+}
+
+/* Set styles for the menu icon. */
+.burger-menu-toggler {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Style the "menu-box" that appears when the icon is pressed.
+    Also play the "menu-close" animation when the icon is pressed again. */
+.burger-menu ul {
+    min-height: min-content;
+    max-height: 40vh;
+    width: auto;
+    background: inherit;
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: -30rem;
+    list-style: none;
+    opacity: 0;
+    z-index: 3;
+
+    animation-name: menu-close;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    transition: opacity 500ms ease-in-out;
+}
+
+/* Set size of the menu links. */
+.burger-menu li {
+    height: 100%;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Hover effect on the links of the menu. */
+.burger-menu li:hover {
+    background: var(--menu-overlay-darker);
+}
+
+/* Styling of the links inside the menu. */
+.burger-menu ul a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: var(--menu-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Play the "menu-open" animation, when the burger icon is pressed. */
+#burger-menu-input:checked ~ ul {
+    opacity: 1;
+    animation-name: menu-open;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    transition: opacity 500ms ease-in-out;
+}
+
+/* Menu-opening animation. */
+@keyframes menu-open {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(30rem, 0);
+    }
+}
+
+/* Menu-closing animation. */
+@keyframes menu-close {
+    0% {
+        transform: translate(30rem, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
