@@ -1,5 +1,7 @@
 # MyHomepage
 
+https://michellenickel.github.io/Homepage/
+
 A simple webpage structured into a few subpages.
 
 I submitted this project as the CS50 courses week 8 assignment on HTML, CSS and JavaScript.
