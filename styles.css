@@ -9,7 +9,7 @@
     --grey-color: #444440;
 
 
-    /* Dark colors */
+    /* old dark colors */
     --navy-color: #0f1736;
     --purple-color: #301f40;
     --transparent-purple-color: rgba(48, 31, 64, 0.7);
@@ -18,7 +18,17 @@
     --rose-color: #c43764;
     --light-rose-color: #f76e99;
     --transparent-rose-color: rgba(196, 55, 100, 0.6);
-
+    
+    /* New Dark Colors */
+    --navy-color: #02000B;
+    /*--purple-color: #988FA0;
+    --transparent-purple-color: rgba(152, 143, 160, 0.7);
+    --transparent-lightpurp-color: rgba(152, 143, 160, 0.6);*/
+    --dark-rose-color: #AC7F90;
+    --rose-color: #F28B9A;
+    --light-rose-color: #F9C5CD;
+    --transparent-rose-color: rgba(221,134,153, 0.6);
+    
 
 
     /* Default Light Mode */
@@ -36,20 +46,22 @@
     --resume-banner-color: var(--olive-color);
 }
 
+/* Dark Mode */
 .dark-mode{
-    /* Dark Mode */
     --bg-color: var(--navy-color);
-    --font-color: var(--dark-rose-color);
+    --font-color: var(--light-rose-color);
     --main-color: var(--rose-color);
     --transparent-main-color: var(--transparent-rose-color);
     --secondary-color: var(--navy-color);
     --darker-secondary-color: var(--purple-color);
-    --menu-text-color: var(--dark-rose-color);
-    --menu-overlay-darker: var(--transparent-purple-color);
-    --menu-overlay-lighter: var(--transparent-lightpurp-color);
+    --menu-text-color: var(--secondary-color);
+    --menu-overlay-darker: var(--transparent-rose-color);
+    --menu-overlay-lighter: var(--transparent-rose-color);
     --accent-color: var(--light-rose-color);
     --resume-outer-circle: var(--accent-color);
     --resume-banner-color: var(--transparent-rose-color);
+    /* Create shadow around font to increase contrast and readability */
+    text-shadow: #000000 0px 0px 5px;
 }
 
 
@@ -143,19 +155,38 @@ main p, .normal-text { /*was 1.8*/
 
 /* NAVBAR NAVIGATION */
 
-/* Change the color of the navigation text and links to the olivegreen color. */
+/* Light Mode: */
+
+/* Change the color of the navigation text and links to the font color. */
 .navbar-custom .navbar-nav .nav-item .navbar-text,
 .navbar-custom .navbar-nav .nav-item .nav-link {
     color: var(--font-color);
 }
 
-/* Change the color of active or hovered links */
+/* Change the color of active or hovered links*/
 /* Maybe make like boxes or zoom or sth*/
 .navbar-custom .navbar-nav .nav-item.active .nav-link,
 .navbar-custom .navbar-nav .nav-item:focus .nav-link,
 .navbar-custom .navbar-nav .nav-item:hover .nav-link {
-    color: pink;
+    color: var(--rose-color);
 }
+
+/* Dark Mode: */
+
+/* Change the color of the navigation text and links to the main color */
+body.dark-mode .navbar-custom .navbar-nav .nav-item .navbar-text,
+body.dark-mode .navbar-custom .navbar-nav .nav-item .nav-link {
+    color: var(--main-color);
+}
+
+/* Change the color of active or hovered links to the lighter color*/
+/* Maybe make like boxes or zoom or sth*/
+body.dark-mode .navbar-custom .navbar-nav .nav-item.active .nav-link,
+body.dark-mode .navbar-custom .navbar-nav .nav-item:focus .nav-link,
+body.dark-mode .navbar-custom .navbar-nav .nav-item:hover .nav-link {
+    color: var(--font-color);
+}
+
 
 /* BURGER MENU NAVIGATION*/
 
@@ -168,6 +199,7 @@ nav input[type="checkbox"] {
 .burger-menu {
     background-color: var(--menu-overlay-lighter);
     z-index:3;
+    text-shadow: none;
 }
 
 /* Set styles for the menu icon. */

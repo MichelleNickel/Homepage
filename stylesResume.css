@@ -23,6 +23,7 @@
     text-align: center;
     /* background: lightgrey; */
 }
+
 .resume-banner {
     height: 25rem;
     width: 80vw;
@@ -37,30 +38,37 @@
 #resume-pic {
     grid-area: res-pic;
 }
+
 #photo {
     width: 30rem;
     border-radius: 50%;
     margin: 0.7rem;
 }
+
 body.dark-mode #photo {
     filter: brightness(.85) contrast(1.2);
 }
+
 #outer-circle {
     width: 32rem;
     height: 32rem;
     border: 0.3rem solid var(--resume-outer-circle);
     border-radius: 50%;
 }
+
 #key {
     grid-area: key;
     max-width: 50vw;
 }
+
 #key-back {
     background: var(--darker-secondary-color);
 }
+
 #skills {
     grid-area: skills;
 }
+
 #skills h2 {
     padding-left: 9rem;
 }
@@ -72,6 +80,11 @@ body.dark-mode #photo {
     gap: 1.5rem;
     text-align: right;
 }
+
+.dotted h3 {
+    color: var(--accent-color);
+}
+
 .level img {
     min-width: 1rem;
     max-width: 3rem;
@@ -79,30 +92,28 @@ body.dark-mode #photo {
     margin-top: 0.6rem;
     flex: none;
 }
+
 #languages {
     grid-area: languages;
-    /* justify-self: start; */
 }
+
 #academic {
     grid-area: academic;
-    /* background: pink; */
 }
+
 #professional {
     grid-area: prof-back;
-    /* background: purple; */
 }
+
 .subtopic {
     color: var(--accent-color);
 }
+
+
 .subtopic svg {
     margin-bottom: 0.3rem;
 }
 
-/*  320px — 480px: Mobile devices
-    481px — 768px: iPads, Tablets
-    769px — 1024px: Small screens, laptops
-    1025px — 1200px: Desktops, large screens
-    1201px and more —  Extra large screens, TV */
 
 /* 20px — 480px: Mobile devices */
 @media screen and (max-width: 590px) {
@@ -122,15 +133,19 @@ body.dark-mode #photo {
             "academic"
             "prof-back";
     }
+
     .resume-banner {
         opacity: 0;
     }
+
     #key {
         color: var(--font-color);
     }
+
     #skills h2 {
         padding-left: 0rem;
     }
+
     .dotted {
         display: flex;
         flex-direction: row;
@@ -138,6 +153,7 @@ body.dark-mode #photo {
         gap: 1.5rem;
         margin-right: 4rem;
     }
+
     .level {
         display: flex;
         flex-direction: row;
@@ -146,6 +162,7 @@ body.dark-mode #photo {
         align-self: center;
     }
 }
+
 
 /* 481px — 768px: iPads, Tablets */
 @media screen and (min-width: 591px) {
@@ -165,18 +182,22 @@ body.dark-mode #photo {
             "academic"
             "prof-back";
     }
+
     .resume-banner {
         opacity: 1;
     }
+
     #skills {
         margin-right: 5rem;
     }
+
     .dotted {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         gap: 1.5rem;
     }
+
     .level {
         display: flex;
         flex-direction: row;
@@ -185,6 +206,7 @@ body.dark-mode #photo {
         align-self: center;
     }
 }
+
 
 /* 769px — 1024px: Small screens, laptops */
 @media screen and (min-width: 780px) {
@@ -204,18 +226,23 @@ body.dark-mode #photo {
             ". academic academic academic academic ."
             ". prof-back prof-back prof-back prof-back .";
     }
+
     #key {
         color: var(--secondary-color);
+        text-shadow: none;
     }
+
     #skills {
         margin-left: 6rem;
     }
+
     .dotted {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         gap: 1.5rem;
     }
+
     .level {
         display: flex;
         flex-direction: row;
@@ -243,15 +270,18 @@ body.dark-mode #photo {
             ". academic academic academic academic ."
             ". prof-back prof-back prof-back prof-back .";
     }
+
     #skills {
         margin-left: 6rem;
     }
+
     .dotted {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         gap: 1.5rem;
     }
+
     .level {
         display: flex;
         flex-direction: row;

@@ -9,6 +9,11 @@
     gap: 50px;
 }
 
+/* Set the color of the Text in the collapsable card */
+.collapse {
+    color: var(--main-color);
+}
+
 /* Remove text-decorations from the links in the text versions */
 #collapse_card p a:link {
     text-decoration: none;

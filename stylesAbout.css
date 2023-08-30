@@ -9,13 +9,8 @@
     position: relative;
     height: auto;
     width: auto;
+    text-shadow: none;
 }
-
-/* #about-banner-overlay {
-    background-color: var(--about-banner-overlay);
-    z-index: 3;
-    /* border: solid green; *
-} */
 
 /* Picture-banner on About Page. */
 #about-banner-img {
