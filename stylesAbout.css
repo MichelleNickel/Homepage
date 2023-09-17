@@ -29,7 +29,7 @@ body.dark-mode #about-banner-img {
 
 /* Styling for banner-text. */
 .about-banner-text {
-    background-color: var(--transparent-main-color);
+    background-color: var(--about-banner);
     text-align: center;
     color: var(--secondary-color);
     position: absolute;

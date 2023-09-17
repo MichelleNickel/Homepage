@@ -7,27 +7,14 @@
     --darker-transparent-green: rgba(110, 139, 87, 0.7);
     --lighter-transparent-green: rgba(110, 139, 87, 0.6);
     --grey-color: #444440;
-
-
-    /* old dark colors */
-    --navy-color: #0f1736;
-    --purple-color: #301f40;
-    --transparent-purple-color: rgba(48, 31, 64, 0.7);
-    --transparent-lightpurp-color: rgba(48, 31, 64, 0.6);
-    --dark-rose-color: #93305b;
-    --rose-color: #c43764;
-    --light-rose-color: #f76e99;
-    --transparent-rose-color: rgba(196, 55, 100, 0.6);
     
-    /* New Dark Colors */
+    /* Dark Colors */
     --navy-color: #02000B;
-    /*--purple-color: #988FA0;
-    --transparent-purple-color: rgba(152, 143, 160, 0.7);
-    --transparent-lightpurp-color: rgba(152, 143, 160, 0.6);*/
     --dark-rose-color: #AC7F90;
     --rose-color: #F28B9A;
     --light-rose-color: #F9C5CD;
-    --transparent-rose-color: rgba(221,134,153, 0.6);
+    --transparent-rose-color: rgba(242, 139, 154, 0.6);
+    --transparent-darkrose-color: rgba(221,134,153, 0.6);
     
 
 
@@ -42,6 +29,7 @@
     --menu-overlay-darker: var(--darker-transparent-green);
     --menu-overlay-lighter: var(--lighter-transparent-green);
     --accent-color: var(--grey-color);
+    --about-banner: var(--darker-transparent-green);
     --resume-outer-circle: var(--darker-secondary-color);
     --resume-banner-color: var(--olive-color);
 }
@@ -51,15 +39,16 @@
     --bg-color: var(--navy-color);
     --font-color: var(--light-rose-color);
     --main-color: var(--rose-color);
-    --transparent-main-color: var(--transparent-rose-color);
+    --transparent-main-color: var(--transparent-darkrose-color);
     --secondary-color: var(--navy-color);
     --darker-secondary-color: var(--purple-color);
     --menu-text-color: var(--secondary-color);
-    --menu-overlay-darker: var(--transparent-rose-color);
-    --menu-overlay-lighter: var(--transparent-rose-color);
+    --menu-overlay-darker: var(--transparent-darkrose-color);
+    --menu-overlay-lighter: var(--transparent-darkrose-color);
     --accent-color: var(--light-rose-color);
+    --about-banner: var(--transparent-rose-color);
     --resume-outer-circle: var(--accent-color);
-    --resume-banner-color: var(--transparent-rose-color);
+    --resume-banner-color: var(--transparent-darkrose-color);
     /* Create shadow around font to increase contrast and readability */
     text-shadow: #000000 0px 0px 5px;
 }
