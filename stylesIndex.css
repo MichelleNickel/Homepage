@@ -6,6 +6,9 @@
 
 #tower-bridge {
     transition: ease all 1s;
+    margin: auto;
+    position: relative;
+    z-index: 1;
 }
 
 body.dark-mode #tower-bridge {
@@ -14,97 +17,127 @@ body.dark-mode #tower-bridge {
 
 #signatur {
     transition: ease all 0.5s;
+    position: absolute;
+    z-index: 2;
 }
 
-/*  320px — 480px: Mobile devices
-    481px — 768px: iPads, Tablets
-    769px — 1024px: Small screens, laptops
-    1025px — 1200px: Desktops, large screens
-    1201px and more —  Extra large screens, TV */
-
-/* 20px — 480px: Mobile devices */
+/* 20px — 480px: Old mobile devices */
 @media screen and (max-width: 590px) {
     #tower-bridge {
-        position: relative;
-        z-index: 1;
         height: auto;
         width: 90vw;
-        margin: auto;
         left: 5%;
     }
 
     #signatur {
-        position: absolute;
-        z-index: 2;
-        /* border: solid red; */
-        width: 25rem;
+        width: 20rem;
         top: 5%;
         left: 35%;
         transform: translate(-60%, 0%);
+        /*border: solid red;*/
     }
 }
 
-/* 481px — 768px: iPads, Tablets */
-@media screen and (min-width: 591px) {
+/* 481px — 768px: smaller mobile phones LANSCAPE*/
+@media screen and (min-width: 591px) and (orientation: landscape) {
     #tower-bridge {
-        position: relative;
-        z-index: 1;
         height: 90vh;
         width: auto;
-        margin: auto;
+        left: 50%;
+    }
+
+    #signatur {
+        width: 25rem;
+        top: 5%;
+        left: 40%;
+        transform: translate(-80%, 50%);
+        /*border: solid pink;*/
+    }
+}
+
+/* 481px — 768px: smaller mobile phones PORTRAIT*/
+@media screen and (min-width: 591px) and (orientation: portrait) {
+    #tower-bridge {
+        height: 90vh;
+        width: auto;
         left: 15%;
     }
 
     #signatur {
-        position: absolute;
-        z-index: 2;
-        width: 28rem;
+        width: 30rem;
         top: 5%;
         left: 40%;
-        transform: translate(-80%, 50%);
-        /* border: solid green; */
+        transform: translate(-80%, 0%);
+        /*border: solid pink;*/
     }
 }
 
-/* 769px — 1024px: Small screens, laptops */
-@media screen and (min-width: 769px) {
+
+/* 769px — 1024px: modern mobile phones LANSCAPE*/
+@media screen and (min-width: 769px) and (orientation: landscape) {
     #tower-bridge {
-        position: relative;
-        z-index: 1;
         height: 90vh;
         width: auto;
-        margin: auto;
-        left: 35%;
+        left: 40%;
     }
 
     #signatur {
-        position: absolute;
-        z-index: 2;
-        /* border: solid blue; */
-        width: 35rem;
+        width: 30rem;
         top: 38%;
-        left: 40%;
+        left: 38%;
         transform: translate(-65%, -50%);
+        /*border: solid blue;*/
     }
 }
 
-/* 1025px — 1200px: Desktops, large screens */
-@media screen and (min-width: 1025px) {
+/* 769px — 1024px: modern mobile phones PORTRAIT*/
+@media screen and (min-width: 769px) and (orientation: portrait) {
     #tower-bridge {
-        position: relative;
-        z-index: 1;
-        height: 90vh;
+        height: auto;
+        width: 90vw;
+        left: 5%;
+    }
+
+    #signatur {
+        width: 35rem;
+        top: 5%;
+        left: 25%;
+        transform: translate(-48%, -10%);
+        /*border: solid blue;*/
+    }
+}
+
+
+/* 1025px — 1200px: Desktops, Laptops LANDSCAPE */
+@media screen and (min-width: 1025px) and (orientation: landscape) {
+    #tower-bridge {
+        height: 85vh;
         width: auto;
         left: 50%;
     }
 
     #signatur {
-        position: absolute;
-        z-index: 2;
         width: 40rem;
         top: 50%;
         left: 50%;
         transform: translate(-130%, -50%);
-        /* border: solid pink; */
+        /*border: solid green;*/
+    }
+}
+
+/* 1025px — 1200px: Desktops, Laptops PORTRAIT */
+@media screen and (min-width: 1025px) and (orientation: portrait) {
+    #tower-bridge {
+        height: auto;
+        width: 90vw;
+        left: 5%;
+    }
+
+    #signatur {
+        width: 40rem;
+        top: 5%;
+        left: 25%;
+        transform: translate(-60%, 0%);
+        /*border: solid darkgreen;*/
     }
 }
